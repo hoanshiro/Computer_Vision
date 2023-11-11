@@ -161,5 +161,6 @@ cython_debug/
 image-classification/GroceryStoreDataset
 object-detction/VOC2012
 lightning_logs/
+checkpoint/
 textbooks/
 Project/
