@@ -164,3 +164,4 @@ lightning_logs/
 checkpoint/
 textbooks/
 Project/
+*.png

@@ -21,11 +21,11 @@ repos:
     hooks:
       - id: flake8
         args: [--max-line-length=88]
-  - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.302
-    hooks:
-      - id: pyright
-        language: system
+  # - repo: https://github.com/RobertCraigie/pyright-python
+  #   rev: v1.1.302
+  #   hooks:
+  #     - id: pyright
+  #       language: system
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     rev: v0.0.261
     hooks:

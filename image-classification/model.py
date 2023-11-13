@@ -7,13 +7,15 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchmetrics.classification import Accuracy, F1Score
 
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
 
 class FastViTClassifier(pl.LightningModule):
     def __init__(self, num_classes, lr: float = 0.0002, class_weights=None):
         super().__init__()
         self.num_classes = num_classes
         self.lr = lr
-        self.per_class_weights = torch.tensor(class_weights) if class_weights else None
+        self.per_class_weights = torch.tensor(class_weights).to(device)
         self.accuracy = Accuracy(task="multiclass", num_classes=num_classes)
         self.f1_score = F1Score(task="multiclass", num_classes=num_classes)
         self.fast_vit = timm.create_model(
